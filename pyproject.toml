@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "file-integrity-checker"
+version = "1.0.0"
+description = "Local file integrity baselines and tamper detection using SHA-256."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Radwan Abdulhadi Ahmed"}]
+keywords = ["integrity", "sha256", "security", "files", "cli"]
+
+[project.scripts]
+file-integrity = "file_integrity_checker.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
